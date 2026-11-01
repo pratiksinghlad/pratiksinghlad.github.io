@@ -1,0 +1,1 @@
+import{n as e}from"./vendor-i18n-Drw7PqYS.js";import{g as t}from"./vendor-mui-D9NalHTn.js";var n=t(),r=({translationKey:t,as:r=`h2`})=>{let{t:i}=e(),a=i(t);return(0,n.jsx)(r,{className:`section-title`,children:a.split(` `).map((e,t,r)=>(0,n.jsxs)(`span`,{className:t===r.length-1?`text-accent`:``,children:[e,` `]},`${e}-${t}`))})};export{r as t};
