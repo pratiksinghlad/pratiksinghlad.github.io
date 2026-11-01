@@ -6,7 +6,6 @@ const Timeline = lazy(() => import("./components/Timeline"));
 const Projects = lazy(() => import("./components/Projects"));
 const Contact = lazy(() => import("./components/Contact"));
 import Footer from "./components/Footer";
-import "./index.scss";
 
 function App() {
   useEffect(() => {
