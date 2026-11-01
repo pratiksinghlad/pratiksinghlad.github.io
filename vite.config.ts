@@ -46,5 +46,23 @@ export default defineConfig({
   base: "/",
   build: {
     outDir: "build",
+    target: "es2022",
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("node_modules")) {
+            if (id.includes("react/") || id.includes("react-dom/") || id.includes("scheduler/")) {
+              return "vendor-react";
+            }
+            if (id.includes("i18next") || id.includes("react-i18next") || id.includes("i18next-browser-languagedetector")) {
+              return "vendor-i18n";
+            }
+            if (id.includes("@mui") || id.includes("@emotion")) {
+              return "vendor-mui";
+            }
+          }
+        },
+      },
+    },
   },
 });
