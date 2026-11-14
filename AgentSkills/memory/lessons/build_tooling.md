@@ -1,6 +1,9 @@
-# Build Tooling & Linting Lessons
+# Build tooling
 
-### ESLint Flat Config & Peer Dependency Alignment
-- In ESLint 9+, legacy `.eslintrc.*` and `.eslintignore` files are obsolete; configure `eslint.config.js` with `typescript-eslint` instead.
-- Check peer dependencies when upgrading ESLint and TypeScript: plugins like `eslint-plugin-react` require compatible ESLint ranges, and `typescript-eslint` v8 parser expects TypeScript `<6.1.0`.
-- Mutating global document state (e.g. `document.documentElement.lang`) inside React component click handlers triggers the `react-hooks/immutability` rule. Move document property synchronization into a dedicated `useEffect` hook keyed to the reactive state/i18n property.
+## TypeScript 7 is the linter
+
+`npm run lint` is `tsc --noEmit`. Do not add ESLint or `typescript-eslint`. TypeScript 7 has no compiler API, so those packages cannot parse it. Depend on the `typescript` package at version 7 directly.
+
+## Deleting old files
+
+Delete unused files one path at a time. A single recursive force-delete across several directories is blocked.

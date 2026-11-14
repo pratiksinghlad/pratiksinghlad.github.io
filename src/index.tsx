@@ -1,23 +1,17 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
 import App from "./App";
-import "./i18n/i18n";
+import "./styles/tokens.css";
+import "./styles/app.css";
+import "./styles/scenes.css";
 
-// Obfuscate Cloudflare Web Analytics token using base64 encoding
-if (import.meta.env.PROD) {
-  const script = document.createElement("script");
-  script.defer = true;
-  script.src = "https://static.cloudflareinsights.com/beacon.min.js";
-  script.setAttribute(
-    "data-cf-beacon",
-    JSON.stringify({ token: import.meta.env.VITE_CLOUDFLARE_TOKEN }),
-  );
-  document.head.appendChild(script);
-}
+const ROOT_ID = "root";
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <React.StrictMode>
+const root = document.getElementById(ROOT_ID);
+if (!root) throw new Error(`Missing #${ROOT_ID}`);
+
+createRoot(root).render(
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
 );

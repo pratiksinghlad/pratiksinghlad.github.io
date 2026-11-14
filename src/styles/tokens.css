@@ -1,0 +1,9 @@
+:root {
+  --bg: #ffffff;
+  --ink: #1c2430;
+  --muted: #5c6570;
+  --navy: #243552;
+  --line: rgba(36, 53, 82, 0.16);
+  --font: "Segoe UI", system-ui, sans-serif;
+  color-scheme: light;
+}

@@ -1,37 +1,7 @@
-# General Bots
+# Every crawler is allowed, including search engines and LLM agents.
+# Profile: https://pratiksinghlad.github.io/llms.txt
+
 User-agent: *
 Allow: /
 
-# Explicitly allow AI/LLM bots for AI Overviews and Search indexing
-User-agent: Google-Extended
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: Anthropic-ai
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Omgilibot
-Allow: /
-
-User-agent: Omgili
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: CCBot
-Allow: /
-
-# Sitemap
 Sitemap: https://pratiksinghlad.github.io/sitemap.xml

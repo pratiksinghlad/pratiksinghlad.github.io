@@ -1,4 +1,7 @@
-# Memory Index
+# Agent memory
 
-## Domains
-- [build_tooling](lessons/build_tooling.md): 3 lessons (ESLint flat config, TypeScript peer dependencies, React hooks DOM mutation)
+Lessons are recorded after a mistake is corrected. Load only the domain that matches the task.
+
+| Domain        | File                                                 | Lessons |
+| ------------- | ---------------------------------------------------- | ------- |
+| Build tooling | [lessons/build_tooling.md](lessons/build_tooling.md) | 2       |
