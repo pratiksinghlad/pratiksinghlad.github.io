@@ -1,0 +1,40 @@
+{
+  "name": "Pratik Singh Lad",
+  "role": "Software engineer",
+  "location": "Coventry, UK",
+  "email": "pratiklad9625@gmail.com",
+  "image": "https://pratiksinghlad.github.io/images/profile_picture_icon.jpg",
+  "url": "https://pratiksinghlad.github.io/",
+  "links": {
+    "email": "mailto:pratiklad9625@gmail.com",
+    "github": "https://github.com/pratiksinghlad",
+    "linkedin": "https://www.linkedin.com/in/pratiksinghlad",
+    "llms": "https://pratiksinghlad.github.io/llms.txt"
+  },
+  "principles": [
+    { "label": "AI-Native", "line": "Models in the work" },
+    { "label": "Builder", "line": "Ships software" },
+    { "label": "Problem Solver", "line": "Finds the constraint" },
+    { "label": "Critical Thinking", "line": "Weighs the options" },
+    { "label": "Agile", "line": "Small steps, fast feedback" },
+    { "label": "Continuous Learner", "line": "Keeps learning the craft" }
+  ],
+  "skills": [
+    "AI/LLM",
+    "AI Agents",
+    "TypeScript",
+    "Python",
+    ".NET / C#",
+    "React",
+    "Node.js",
+    "GraphQL",
+    "PostgreSQL",
+    "SQL Server",
+    "MongoDB",
+    "Azure",
+    "AWS",
+    "Docker",
+    "K8",
+    "CI/CD"
+  ]
+}

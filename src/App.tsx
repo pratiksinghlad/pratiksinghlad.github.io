@@ -1,41 +1,39 @@
-import { Suspense, lazy, useEffect } from "react";
-import Navigation from "./components/Navigation";
-import Main from "./components/Main";
-const Expertise = lazy(() => import("./components/Expertise"));
-const Timeline = lazy(() => import("./components/Timeline"));
-const Projects = lazy(() => import("./components/Projects"));
-const Contact = lazy(() => import("./components/Contact"));
-import Footer from "./components/Footer";
-import "./index.scss";
+import { ConnectLinks } from "./components/ConnectLinks";
+import { Identity } from "./components/Identity";
+import { Principles } from "./components/Principles";
+import { TechStack } from "./components/TechStack";
+import { EmailIcon } from "./components/icons";
+import { CONTACT_LABEL, contactHref } from "./data/portfolio";
+import { useSpotlight } from "./useSpotlight";
 
-function App() {
-  useEffect(() => {
-    if (!window.location.hash) {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-    }
-  }, []);
+export default function App() {
+  const spot = useSpotlight();
 
   return (
-    <div className="main-container">
-      <Navigation />
-      <main>
-        <Main />
-        <Suspense fallback={<div />}>
-          <Expertise />
-        </Suspense>
-        <Suspense fallback={<div />}>
-          <Timeline />
-        </Suspense>
-        <Suspense fallback={<div />}>
-          <Projects />
-        </Suspense>
-        <Suspense fallback={<div />}>
-          <Contact />
-        </Suspense>
-      </main>
-      <Footer />
-    </div>
+    <main className="app">
+      <header className="intro">
+        <Identity />
+        <div className="actions">
+          <a className="action" href={contactHref()}>
+            <EmailIcon />
+            {CONTACT_LABEL}
+          </a>
+          <ConnectLinks />
+        </div>
+      </header>
+      <Principles
+        pinnedId={spot.pinnedPrinciple}
+        relatedIds={spot.relatedPrinciples}
+        filtering={spot.techFocus}
+        onHover={spot.hoverPrinciple}
+        onToggle={spot.togglePrinciple}
+      />
+      <TechStack
+        litIds={spot.litIds}
+        pinnedId={spot.pinnedTech}
+        onHover={spot.hoverTech}
+        onToggle={spot.toggleTech}
+      />
+    </main>
   );
 }
-
-export default App;

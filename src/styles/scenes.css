@@ -1,0 +1,490 @@
+.scene {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 84px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(36, 53, 82, 0.06), rgba(36, 53, 82, 0.02));
+  pointer-events: none;
+  container-type: size;
+}
+
+.control-stage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.floor {
+  fill: none;
+  stroke: rgba(36, 53, 82, 0.2);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+}
+
+.link {
+  fill: none;
+  stroke: rgba(36, 53, 82, 0.45);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 0.2 3.5;
+}
+
+.agent {
+  fill: #243552;
+}
+
+.agent-b {
+  fill: #149eca;
+}
+
+.agent-c {
+  fill: #5d7eab;
+}
+
+.bot-antenna {
+  fill: #149eca;
+}
+
+.agent-b .bot-antenna,
+.agent-b .bot-eye {
+  fill: #243552;
+}
+
+.bot-eye {
+  fill: #fff;
+}
+
+.bot-stem {
+  fill: none;
+  stroke: #149eca;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+}
+
+.agent-b .bot-stem {
+  stroke: #243552;
+}
+
+.guide {
+  fill: #243552;
+}
+
+.baton {
+  transform-box: view-box;
+  transform-origin: 30px 78px;
+}
+
+.guide-arm {
+  fill: none;
+  stroke: #243552;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+}
+
+.hand {
+  fill: #149eca;
+}
+
+.pulse {
+  fill: none;
+  stroke: #149eca;
+  stroke-width: 1.2;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.editor {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  width: min(88%, 280px);
+  height: min(80%, 156px);
+  translate: -50% -50%;
+  overflow: hidden;
+  border: 1.5px solid rgba(36, 53, 82, 0.35);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.editor-top {
+  display: flex;
+  flex: none;
+  gap: 4px;
+  padding: 7% 8% 5%;
+}
+
+.editor-top i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #d5e2f0;
+}
+
+.editor-top i:first-child {
+  background: #149eca;
+}
+
+.editor-body {
+  display: grid;
+  flex: 1;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 6%;
+  min-height: 0;
+  padding: 0 7% 8%;
+}
+
+.code-line,
+.preview-bar,
+.preview-card {
+  display: block;
+}
+
+.code-line {
+  height: 16%;
+  margin-bottom: 12%;
+  border-radius: 99px;
+  background: #243552;
+  transform-origin: left center;
+}
+
+.code-line-mid {
+  width: 76%;
+  background: #8eb8e8;
+}
+
+.code-line-short {
+  width: 48%;
+  background: #149eca;
+}
+
+.preview {
+  position: relative;
+  border-radius: 4px;
+  background: rgba(36, 53, 82, 0.05);
+}
+
+.preview-bar {
+  height: 14%;
+  margin: 10% 10% 0;
+  border-radius: 99px;
+  background: #8eb8e8;
+  transform-origin: left center;
+}
+
+.preview-card {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 12%;
+  height: 42%;
+  border-radius: 3px;
+  background: #243552;
+}
+
+.scene-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.puzzle-base {
+  fill: rgba(36, 53, 82, 0.12);
+  stroke: #243552;
+  stroke-width: 1.6;
+  stroke-linejoin: round;
+}
+
+.puzzle-piece {
+  fill: #243552;
+}
+
+.solved-mark {
+  fill: none;
+  stroke: #149eca;
+  stroke-width: 2.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 1;
+}
+
+.scene-agile {
+  display: grid;
+  place-items: center;
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  width: min(92%, 300px);
+  height: min(78%, 148px);
+  padding: 16px 8px 8px;
+}
+
+.lane {
+  position: relative;
+  border-radius: 6px;
+  background: rgba(36, 53, 82, 0.07);
+}
+
+.lane::before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: -8px;
+  height: 3px;
+  border-radius: 99px;
+  background: rgba(36, 53, 82, 0.22);
+}
+
+.lane-doing::before {
+  background: #149eca;
+}
+
+.lane-done::before {
+  background: #243552;
+}
+
+.ticket,
+.sprint-card,
+.sprint-check {
+  position: absolute;
+}
+
+.ticket {
+  top: 28px;
+  left: 11%;
+  width: 16%;
+  height: 9px;
+  border-radius: 3px;
+  background: rgba(36, 53, 82, 0.28);
+}
+
+.ticket-next {
+  top: 42px;
+  width: 12%;
+}
+
+.sprint-card {
+  top: 28px;
+  left: 72%;
+  width: 16%;
+  height: 11px;
+  border-radius: 3px;
+  background: #243552;
+}
+
+.sprint-check {
+  left: 78%;
+  top: 50px;
+  width: 8px;
+  height: 5px;
+  border-bottom: 2px solid #149eca;
+  border-left: 2px solid #149eca;
+  rotate: -45deg;
+  opacity: 1;
+}
+
+.scale {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 88px;
+  height: 54px;
+  translate: -50% -50%;
+}
+
+.beam {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  top: 18px;
+  height: 3px;
+  border-radius: 99px;
+  background: #243552;
+  transform-origin: center;
+}
+
+.pan {
+  position: absolute;
+  top: 3px;
+  width: 16px;
+  height: 11px;
+  border: 1.5px solid #243552;
+  border-top: none;
+  border-radius: 0 0 9px 9px;
+}
+
+.pan::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 1px;
+  height: 4px;
+  translate: -50% 0;
+  background: #243552;
+}
+
+.pan-left {
+  left: -7px;
+}
+
+.pan-right {
+  right: -7px;
+}
+
+.weight {
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #149eca;
+  opacity: 1;
+}
+
+.fulcrum {
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  translate: -50% 0;
+  border-right: 8px solid transparent;
+  border-bottom: 16px solid #243552;
+  border-left: 8px solid transparent;
+}
+
+.think-mark {
+  position: absolute;
+  left: 50%;
+  top: 2px;
+  width: 7px;
+  height: 4px;
+  border-bottom: 2px solid #149eca;
+  border-left: 2px solid #149eca;
+  translate: -50% 0;
+  rotate: -45deg;
+  opacity: 1;
+}
+
+.book {
+  position: absolute;
+  left: 50%;
+  top: 54%;
+  width: 86px;
+  height: 50px;
+  translate: -50% -50%;
+  perspective: 320px;
+}
+
+.book::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -2px;
+  bottom: -2px;
+  z-index: 4;
+  width: 3px;
+  translate: -50% 0;
+  border-radius: 2px;
+  background: #243552;
+}
+
+.leaf {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  border: 1.5px solid rgba(36, 53, 82, 0.4);
+  background-color: #fff;
+  background-image:
+    linear-gradient(#c5d4e6, #c5d4e6), linear-gradient(#c5d4e6, #c5d4e6),
+    linear-gradient(#c5d4e6, #c5d4e6);
+  background-repeat: no-repeat;
+  background-size:
+    16px 2px,
+    12px 2px,
+    16px 2px;
+  background-position:
+    7px 13px,
+    7px 20px,
+    7px 27px;
+}
+
+.leaf-left {
+  left: 0;
+  z-index: 1;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+  background-color: #f4f8fc;
+}
+
+.leaf-right {
+  left: 50%;
+  z-index: 1;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+}
+
+.leaf-turn {
+  left: 50%;
+  z-index: 3;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  transform-origin: left center;
+  transform: rotateY(-36deg);
+}
+
+@media (min-width: 1080px) and (min-height: 640px) {
+  .scene {
+    flex: 1;
+    height: auto;
+    min-height: 150px;
+  }
+}
+
+@media (max-width: 720px) {
+  .scene {
+    height: 68px;
+  }
+
+  .scale {
+    scale: 0.9;
+  }
+}
+
+@container (min-height: 140px) {
+  .book,
+  .scale {
+    scale: 1.45;
+  }
+}
+
+@container (min-height: 220px) {
+  .book {
+    scale: 2.15;
+  }
+
+  .scale {
+    scale: 2.05;
+  }
+}
+
+.spark {
+  position: absolute;
+  left: 64%;
+  top: 8px;
+  width: 9px;
+  height: 9px;
+  background: #149eca;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 1;
+}
