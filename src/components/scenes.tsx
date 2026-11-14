@@ -32,13 +32,19 @@ function AgentsScene() {
 }
 
 function Signal({ className, d }: { className: string; d: string }) {
-  return <path className={`link ${className}`} d={d} />;
+  return (
+    <>
+      <path className={`link ${className}`} d={d} />
+      <circle className={`command ${className}`} r="2.5" style={{ offsetPath: `path('${d}')` }} />
+    </>
+  );
 }
 
 function Agent({ className, x }: { className: string; x: number }) {
   return (
     <g transform={`translate(${x} 108)`}>
       <g className={`agent ${className}`}>
+        <circle className="ack" cx="0" cy="-28" r="4.6" />
         <circle className="bot-antenna" cx="0" cy="-28" r="2.2" />
         <path d="M0 -26v3.2" className="bot-stem" />
         <rect className="bot-body" x="-8" y="-22" width="16" height="10" rx="2.2" />
@@ -115,7 +121,7 @@ function ThinkScene() {
             <i className="weight" />
           </i>
           <i className="pan pan-right">
-            <i className="weight" />
+            <i className="weight weight-right" />
           </i>
         </i>
         <i className="fulcrum" />
