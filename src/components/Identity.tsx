@@ -1,14 +1,5 @@
 import { useEffect, useRef, type FormEvent, type MouseEvent, type RefObject } from "react";
-import {
-  LOCATION,
-  NAME,
-  PHOTO_SIZES,
-  ROLE,
-  largeFile,
-  photoLargeUrl,
-  photoUrl,
-  thumbSet,
-} from "../data/portfolio";
+import { LOCATION, NAME, PHOTO_HEIGHT, PHOTO_WIDTH, ROLE, photoUrl } from "../data/portfolio";
 import { bindLightDismiss, closeDialog, supportsTopLayerExit } from "../dialog";
 
 const PHOTO_LABEL = `View photo of ${NAME}`;
@@ -17,8 +8,6 @@ const CLOSE_LABEL = "Close";
 const PHOTO_DIALOG_ID = "photo-dialog";
 const PHOTO_TITLE_ID = "photo-dialog-title";
 const SHOW_MODAL = "show-modal";
-const THUMB_SIZE = 144;
-const LARGE_SIZE = 320;
 
 export function Identity() {
   const dialogRef = useRef<HTMLDialogElement>(null);
@@ -56,20 +45,14 @@ export function Identity() {
 
 function ProfilePhoto() {
   return (
-    <picture>
-      <source type="image/avif" srcSet={thumbSet("avif")} sizes={PHOTO_SIZES} />
-      <source type="image/webp" srcSet={thumbSet("webp")} sizes={PHOTO_SIZES} />
-      <img
-        className="profile-photo"
-        src={photoUrl()}
-        srcSet={thumbSet("jpg")}
-        sizes={PHOTO_SIZES}
-        alt={NAME}
-        width={THUMB_SIZE}
-        height={THUMB_SIZE}
-        fetchPriority="high"
-      />
-    </picture>
+    <img
+      className="profile-photo"
+      src={photoUrl()}
+      alt={NAME}
+      width={PHOTO_WIDTH}
+      height={PHOTO_HEIGHT}
+      fetchPriority="high"
+    />
   );
 }
 
@@ -96,19 +79,16 @@ function PhotoViewer({ dialogRef }: { dialogRef: RefObject<HTMLDialogElement | n
 
 function LargePhoto() {
   return (
-    <picture>
-      <source type="image/avif" srcSet={largeFile("avif")} />
-      <source type="image/webp" srcSet={largeFile("webp")} />
-      <img
-        className="photo-large"
-        src={photoLargeUrl()}
-        alt={NAME}
-        width={LARGE_SIZE}
-        height={LARGE_SIZE}
-        loading="lazy"
-        fetchPriority="low"
-      />
-    </picture>
+    <img
+      className="photo-large"
+      src={photoUrl()}
+      alt={NAME}
+      width={PHOTO_WIDTH}
+      height={PHOTO_HEIGHT}
+      decoding="async"
+      loading="lazy"
+      fetchPriority="low"
+    />
   );
 }
 
