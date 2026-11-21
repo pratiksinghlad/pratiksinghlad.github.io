@@ -13,7 +13,7 @@ export function TechStack({ litIds, pinnedId, onHover, onToggle }: TechStackProp
   const filtering = litIds !== null;
   return (
     <section className="stack" aria-label="Tech stack">
-      <ul className="tech-grid" data-filtering={flag(filtering)} data-all={allSelected(litIds)}>
+      <ul className="tech-grid" role="list" data-filtering={flag(filtering)}>
         {TECH_STACK.map((tech) => (
           <li key={tech.id}>
             <TechButton
@@ -47,7 +47,7 @@ function TechButton({
   onToggle: (id: string) => void;
 }) {
   const style = { "--mark": tech.mark } as CSSProperties;
-  const className = lit && filtering ? "tech-item is-lit" : "tech-item";
+  const className = lit && filtering ? "tech-item glass is-lit" : "tech-item glass";
   return (
     <button
       type="button"
@@ -87,12 +87,6 @@ function focusTech(
   onHover: (id: string | null) => void,
 ): void {
   if (event.currentTarget.matches(":focus-visible")) onHover(id);
-}
-
-function allSelected(litIds: ReadonlySet<string> | null): "true" | "false" {
-  if (!litIds) return "false";
-  const every = TECH_STACK.every((tech) => litIds.has(tech.id));
-  return every ? "true" : "false";
 }
 
 function isLit(litIds: ReadonlySet<string> | null, id: string): boolean {

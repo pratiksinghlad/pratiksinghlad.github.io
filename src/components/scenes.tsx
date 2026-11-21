@@ -78,19 +78,19 @@ function BuilderScene() {
     <span className="scene scene-build" aria-hidden="true">
       <span className="editor">
         <span className="editor-top">
-          <i />
-          <i />
-          <i />
+          <span />
+          <span />
+          <span />
         </span>
         <span className="editor-body">
           <span className="code">
-            <i className="code-line" />
-            <i className="code-line code-line-mid" />
-            <i className="code-line code-line-short" />
+            <span className="code-line" />
+            <span className="code-line code-line-mid" />
+            <span className="code-line code-line-short" />
           </span>
           <span className="preview">
-            <i className="preview-bar" />
-            <i className="preview-card" />
+            <span className="preview-bar" />
+            <span className="preview-card" />
           </span>
         </span>
       </span>
@@ -116,16 +116,16 @@ function ThinkScene() {
   return (
     <span className="scene scene-think" aria-hidden="true">
       <span className="scale">
-        <i className="beam">
-          <i className="pan pan-left">
-            <i className="weight" />
-          </i>
-          <i className="pan pan-right">
-            <i className="weight weight-right" />
-          </i>
-        </i>
-        <i className="fulcrum" />
-        <i className="think-mark" />
+        <span className="beam">
+          <span className="pan pan-left">
+            <span className="weight" />
+          </span>
+          <span className="pan pan-right">
+            <span className="weight weight-right" />
+          </span>
+        </span>
+        <span className="fulcrum" />
+        <span className="think-mark" />
       </span>
     </span>
   );
@@ -138,10 +138,10 @@ function AgileScene() {
         <span className="lane lane-todo" />
         <span className="lane lane-doing" />
         <span className="lane lane-done" />
-        <i className="ticket" />
-        <i className="ticket ticket-next" />
-        <i className="sprint-card" />
-        <i className="sprint-check" />
+        <span className="ticket" />
+        <span className="ticket ticket-next" />
+        <span className="sprint-card" />
+        <span className="sprint-check" />
       </span>
     </span>
   );
@@ -151,11 +151,11 @@ function LearnerScene() {
   return (
     <span className="scene scene-learn" aria-hidden="true">
       <span className="book">
-        <i className="leaf leaf-left" />
-        <i className="leaf leaf-right" />
-        <i className="leaf leaf-turn" />
+        <span className="leaf leaf-left" />
+        <span className="leaf leaf-right" />
+        <span className="leaf leaf-turn" />
       </span>
-      <i className="spark" />
+      <span className="spark" />
     </span>
   );
 }

@@ -1,9 +1,29 @@
 :root {
   --bg: #ffffff;
   --ink: #1c2430;
-  --muted: #5c6570;
+  --muted: #4c5764;
   --navy: #243552;
   --line: rgba(36, 53, 82, 0.16);
   --font: "Segoe UI", system-ui, sans-serif;
+  --glass-fill: rgba(255, 255, 255, 0.12);
+  --glass-fill-top: rgba(255, 255, 255, 0.32);
+  --glass-fill-active: rgba(255, 255, 255, 0.62);
+  --glass-fill-active-top: rgba(255, 255, 255, 0.8);
+  --glass-fill-quiet: rgba(255, 255, 255, 0.16);
+  --glass-fill-quiet-top: rgba(255, 255, 255, 0.32);
+  --glass-shine-quiet: rgba(255, 255, 255, 0.22);
+  --glass-edge-quiet: rgba(255, 255, 255, 0.34);
+  --glass-shadow-quiet: 0 4px 12px rgba(36, 53, 82, 0.04);
+  --glass-shine: rgba(255, 255, 255, 0.72);
+  --glass-edge: rgba(255, 255, 255, 0.46);
+  --glass-edge-active: rgba(255, 255, 255, 0.78);
+  --glass-ring-active: 0 0 0 1px rgba(36, 53, 82, 0.2);
+  --glass-hairline: 0 0 0 1px rgba(36, 53, 82, 0.06);
+  --glass-blur: 28px;
+  --glass-saturate: 1.85;
+  --glass-sheen: inset 0 1px 0 rgba(255, 255, 255, 0.82), inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+  --glass-shade: inset 0 -1px 0 rgba(36, 53, 82, 0.05);
+  --glass-shadow: 0 10px 26px rgba(36, 53, 82, 0.08);
+  --glass-shadow-active: 0 16px 34px rgba(36, 53, 82, 0.18);
   color-scheme: light;
 }

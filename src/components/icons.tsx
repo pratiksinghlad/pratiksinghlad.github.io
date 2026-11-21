@@ -1,24 +1,24 @@
-import type { LucideIcon } from "lucide-react";
-import {
-  Atom,
-  Bot,
-  Braces,
-  Cloud,
-  CloudCog,
-  Code,
-  Container,
-  Database,
-  FileCode,
-  Hexagon,
-  Leaf,
-  Mail,
-  Server,
-  Sparkles,
-  Workflow,
-} from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
+import Atom from "lucide-react/icons/atom";
+import Bot from "lucide-react/icons/bot";
+import Braces from "lucide-react/icons/braces";
+import Cloud from "lucide-react/icons/cloud";
+import CloudCog from "lucide-react/icons/cloud-cog";
+import Code from "lucide-react/icons/code";
+import Container from "lucide-react/icons/container";
+import Database from "lucide-react/icons/database";
+import FileCode from "lucide-react/icons/file-code";
+import Hexagon from "lucide-react/icons/hexagon";
+import Leaf from "lucide-react/icons/leaf";
+import Mail from "lucide-react/icons/mail";
+import Server from "lucide-react/icons/server";
+import Sparkles from "lucide-react/icons/sparkles";
+import Workflow from "lucide-react/icons/workflow";
 import type { TechId } from "../data/portfolio";
 
-const MARKS: Record<TechId, LucideIcon> = {
+type IconComponent = ComponentType<SVGProps<SVGSVGElement>>;
+
+const MARKS: Record<TechId, IconComponent> = {
   "ai-llm": Sparkles,
   "ai-agents": Bot,
   typescript: FileCode,

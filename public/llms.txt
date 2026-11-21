@@ -39,7 +39,6 @@ Pratik Singh Lad builds software with AI models, typed web stacks, and cloud del
 - .NET / C#
 - React
 - Node.js
-- GraphQL
 - PostgreSQL
 - SQL Server
 - MongoDB

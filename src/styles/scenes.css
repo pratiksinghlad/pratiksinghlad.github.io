@@ -5,7 +5,7 @@
   height: 84px;
   overflow: hidden;
   border-radius: 12px;
-  background: linear-gradient(180deg, rgba(36, 53, 82, 0.06), rgba(36, 53, 82, 0.02));
+  background: transparent;
   pointer-events: none;
   container-type: size;
 }
@@ -36,7 +36,6 @@
   fill: #149eca;
   offset-rotate: 0deg;
   opacity: 0;
-  animation: send 3.6s ease-in-out infinite;
 }
 
 .command.signal-b,
@@ -56,12 +55,10 @@
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
-  animation: ack 3.6s ease-out infinite;
 }
 
 .agent {
   fill: #243552;
-  animation: idle 2.8s ease-in-out infinite;
 }
 
 .agent-b {
@@ -105,7 +102,6 @@
 .baton {
   transform-box: view-box;
   transform-origin: 30px 78px;
-  animation: conduct 3.6s ease-in-out infinite;
 }
 
 .guide-arm {
@@ -125,7 +121,6 @@
   stroke-width: 1.2;
   transform-box: fill-box;
   transform-origin: center;
-  animation: ping 2.2s ease-out infinite;
 }
 
 .editor {
@@ -150,14 +145,14 @@
   padding: 7% 8% 5%;
 }
 
-.editor-top i {
+.editor-top span {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background: #d5e2f0;
 }
 
-.editor-top i:first-child {
+.editor-top span:first-child {
   background: #149eca;
 }
 
@@ -182,7 +177,6 @@
   border-radius: 99px;
   background: #243552;
   transform-origin: left center;
-  animation: assemble 3.2s ease-in-out infinite;
 }
 
 .code-line-mid {
@@ -209,7 +203,6 @@
   border-radius: 99px;
   background: #8eb8e8;
   transform-origin: left center;
-  animation: assemble 3.2s ease-in-out infinite;
   animation-delay: 0.78s;
 }
 
@@ -221,7 +214,6 @@
   height: 42%;
   border-radius: 3px;
   background: #243552;
-  animation: rise-ui 3.2s ease-in-out infinite;
 }
 
 .scene-svg {
@@ -239,7 +231,6 @@
 
 .puzzle-piece {
   fill: #243552;
-  animation: snap 3.2s ease-in-out infinite;
 }
 
 .solved-mark {
@@ -249,7 +240,6 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   opacity: 0;
-  animation: solved 3.2s ease-in-out infinite;
 }
 
 .scene-agile {
@@ -319,7 +309,6 @@
   height: 11px;
   border-radius: 3px;
   background: #243552;
-  animation: sprint 4s ease-in-out infinite;
 }
 
 .sprint-check {
@@ -331,7 +320,6 @@
   border-left: 2px solid #149eca;
   rotate: -45deg;
   opacity: 0;
-  animation: check-in 4s ease-in-out infinite;
 }
 
 .scale {
@@ -352,7 +340,6 @@
   border-radius: 99px;
   background: #243552;
   transform-origin: center;
-  animation: weigh 3.6s ease-in-out infinite;
 }
 
 .pan {
@@ -363,7 +350,6 @@
   border: 1.5px solid #243552;
   border-top: none;
   border-radius: 0 0 9px 9px;
-  animation: hang 3.6s ease-in-out infinite;
 }
 
 .pan::before {
@@ -394,11 +380,6 @@
   border-radius: 50%;
   background: #149eca;
   opacity: 0;
-  animation: weight-left 3.6s ease-in-out infinite;
-}
-
-.weight-right {
-  animation-name: weight-right;
 }
 
 .fulcrum {
@@ -422,7 +403,6 @@
   translate: -50% 0;
   rotate: -45deg;
   opacity: 0;
-  animation: think-check 3.6s ease-in-out infinite;
 }
 
 .book {
@@ -490,14 +470,13 @@
   border-left: none;
   border-radius: 0 4px 4px 0;
   transform-origin: left center;
-  animation: turn-page 2.8s ease-in-out infinite;
 }
 
 @media (min-width: 1080px) and (min-height: 640px) {
   .scene {
-    flex: 1;
+    flex: 1 1 auto;
     height: auto;
-    min-height: 150px;
+    min-height: 72px;
   }
 }
 
@@ -537,31 +516,84 @@
   background: #149eca;
   clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
   opacity: 0;
-  animation: insight 2.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .command {
+    animation: send 3.6s ease-in-out infinite;
+  }
+
+  .ack {
+    animation: ack 3.6s ease-out infinite;
+  }
+
+  .agent {
+    animation: idle 2.8s ease-in-out infinite;
+  }
+
+  .baton {
+    animation: conduct 3.6s ease-in-out infinite;
+  }
+
+  .pulse {
+    animation: ping 2.2s ease-out infinite;
+  }
+
+  .code-line,
+  .preview-bar {
+    animation: assemble 3.2s ease-in-out infinite;
+  }
+
+  .preview-card {
+    animation: rise-ui 3.2s ease-in-out infinite;
+  }
+
+  .puzzle-piece {
+    animation: snap 3.2s ease-in-out infinite;
+  }
+
+  .solved-mark {
+    animation: solved 3.2s ease-in-out infinite;
+  }
+
+  .sprint-card {
+    animation: sprint 4s ease-in-out infinite;
+  }
+
+  .sprint-check {
+    animation: check-in 4s ease-in-out infinite;
+  }
+
+  .beam {
+    animation: weigh 3.6s ease-in-out infinite;
+  }
+
+  .pan {
+    animation: hang 3.6s ease-in-out infinite;
+  }
+
+  .weight {
+    animation: weight-left 3.6s ease-in-out infinite;
+  }
+
+  .weight-right {
+    animation-name: weight-right;
+  }
+
+  .think-mark {
+    animation: think-check 3.6s ease-in-out infinite;
+  }
+
+  .leaf-turn {
+    animation: turn-page 2.8s ease-in-out infinite;
+  }
+
+  .spark {
+    animation: insight 2.8s ease-in-out infinite;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .command,
-  .ack,
-  .baton,
-  .agent,
-  .pulse,
-  .code-line,
-  .preview-bar,
-  .preview-card,
-  .puzzle-piece,
-  .solved-mark,
-  .beam,
-  .pan,
-  .weight,
-  .think-mark,
-  .sprint-card,
-  .sprint-check,
-  .leaf-turn,
-  .spark {
-    animation: none;
-  }
-
   .puzzle-piece,
   .beam,
   .pan {

@@ -1,8 +1,15 @@
 export const NAME = "Pratik Singh Lad";
 export const ROLE = "Software engineer";
 export const LOCATION = "Coventry, UK";
-export const PHOTO_PATH = "images/profile-144.jpg";
-export const PHOTO_LARGE_PATH = "images/profile_picture_icon.jpg";
+const THUMB_STEM = "profile-144";
+const LARGE_STEM = "profile-320";
+const LARGE_JPEG_STEM = "profile_picture_icon";
+const THUMB_WIDTH = 144;
+const LARGE_WIDTH = 320;
+
+export const PHOTO_SIZES = "(max-width: 720px) 72px, 112px";
+export const PHOTO_PATH = `images/${THUMB_STEM}.jpg`;
+export const PHOTO_LARGE_PATH = `images/${LARGE_JPEG_STEM}.jpg`;
 export const EMAIL = "pratiklad9625@gmail.com";
 export const GITHUB_URL = "https://github.com/pratiksinghlad";
 export const LINKEDIN_URL = "https://www.linkedin.com/in/pratiksinghlad";
@@ -102,12 +109,32 @@ export function contactHref(): string {
   return `mailto:${EMAIL}?subject=${subject}`;
 }
 
+type ImageFormat = "avif" | "webp" | "jpg";
+
+export function thumbSet(format: ImageFormat): string {
+  const largeStem = format === "jpg" ? LARGE_JPEG_STEM : LARGE_STEM;
+  return `${sizedFile(THUMB_STEM, format, THUMB_WIDTH)}, ${sizedFile(largeStem, format, LARGE_WIDTH)}`;
+}
+
+export function largeFile(format: ImageFormat): string {
+  const stem = format === "jpg" ? LARGE_JPEG_STEM : LARGE_STEM;
+  return asset(`images/${stem}.${format}`);
+}
+
 export function photoUrl(): string {
-  return `${import.meta.env.BASE_URL}${PHOTO_PATH}`;
+  return asset(PHOTO_PATH);
 }
 
 export function photoLargeUrl(): string {
-  return `${import.meta.env.BASE_URL}${PHOTO_LARGE_PATH}`;
+  return asset(PHOTO_LARGE_PATH);
+}
+
+function sizedFile(stem: string, format: ImageFormat, width: number): string {
+  return `${asset(`images/${stem}.${format}`)} ${width}w`;
+}
+
+function asset(path: string): string {
+  return `${import.meta.env.BASE_URL}${path}`;
 }
 
 export function techIdsFor(principleId: string | null): ReadonlySet<TechId> | null {

@@ -7,6 +7,8 @@ import "./styles/scenes.css";
 
 const ROOT_ID = "root";
 
+loadInvokerCommands();
+
 const root = document.getElementById(ROOT_ID);
 if (!root) throw new Error(`Missing #${ROOT_ID}`);
 
@@ -15,3 +17,8 @@ createRoot(root).render(
     <App />
   </StrictMode>,
 );
+
+function loadInvokerCommands(): void {
+  if ("commandForElement" in HTMLButtonElement.prototype) return;
+  void import("invokers-polyfill");
+}
