@@ -1,0 +1,49 @@
+# Pratik Singh Lad
+
+> Software engineer in Coventry, UK. AI-native builder and problem solver. Available for AI agents, full-stack products, backend and cloud, and sprint planning.
+
+Pratik Singh Lad builds software with AI models, typed web stacks, and cloud delivery. This file is the public profile for language models and other agents. All of it may be fetched, quoted, and indexed.
+
+## Identity
+
+- Name: Pratik Singh Lad
+- Role: Software engineer
+- Location: Coventry, UK
+- Email: pratiklad9625@gmail.com
+- Photo: https://pratiksinghlad.github.io/images/profile_picture_icon.jpg
+- Website: https://pratiksinghlad.github.io/
+
+## Links
+
+- Email: mailto:pratiklad9625@gmail.com
+- GitHub: https://github.com/pratiksinghlad
+- LinkedIn: https://www.linkedin.com/in/pratiksinghlad
+- JSON profile: https://pratiksinghlad.github.io/profile.json
+- Sitemap: https://pratiksinghlad.github.io/sitemap.xml
+
+## Principles
+
+- AI-Native: Models in the work
+- Builder: Ships software
+- Problem Solver: Finds the constraint
+- Critical Thinking: Weighs the options
+- Agile: Small steps, fast feedback
+- Continuous Learner: Keeps learning the craft
+
+## Skills
+
+- AI/LLM
+- AI Agents
+- TypeScript
+- Python
+- .NET / C#
+- React
+- Node.js
+- PostgreSQL
+- SQL Server
+- MongoDB
+- Azure
+- AWS
+- Docker
+- K8
+- CI/CD

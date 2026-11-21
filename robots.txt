@@ -1,0 +1,7 @@
+# Every crawler is allowed, including search engines and LLM agents.
+# Profile: https://pratiksinghlad.github.io/llms.txt
+
+User-agent: *
+Allow: /
+
+Sitemap: https://pratiksinghlad.github.io/sitemap.xml
