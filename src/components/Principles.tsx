@@ -18,19 +18,26 @@ export function Principles({
   onToggle,
 }: PrinciplesProps) {
   return (
-    <ul className="principles" aria-label="Principles" data-filtering={flag(filtering)}>
-      {PRINCIPLES.map((principle) => (
-        <li key={principle.id}>
-          <PrincipleCard
-            principle={principle}
-            pressed={pinnedId === principle.id}
-            related={relatedIds?.has(principle.id) ?? false}
-            onHover={onHover}
-            onToggle={onToggle}
-          />
-        </li>
-      ))}
-    </ul>
+    <section className="principles-section">
+      <h2 className="section-title">Principles</h2>
+      <ul
+        className="principles"
+        role="list"
+        data-filtering={flag(filtering)}
+      >
+        {PRINCIPLES.map((principle) => (
+          <li key={principle.id}>
+            <PrincipleCard
+              principle={principle}
+              pressed={pinnedId === principle.id}
+              related={relatedIds?.has(principle.id) ?? false}
+              onHover={onHover}
+              onToggle={onToggle}
+            />
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
 
@@ -47,7 +54,7 @@ function PrincipleCard({
   onHover: (id: string | null) => void;
   onToggle: (id: string) => void;
 }) {
-  const className = related ? "principle is-related" : "principle";
+  const className = related ? "principle glass is-related" : "principle glass";
   return (
     <button
       type="button"

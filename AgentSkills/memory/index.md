@@ -4,4 +4,4 @@ Lessons are recorded after a mistake is corrected. Load only the domain that mat
 
 | Domain        | File                                                 | Lessons |
 | ------------- | ---------------------------------------------------- | ------- |
-| Build tooling | [lessons/build_tooling.md](lessons/build_tooling.md) | 2       |
+| Build tooling | [lessons/build_tooling.md](lessons/build_tooling.md) | 7       |

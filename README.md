@@ -1,14 +1,13 @@
 # My Portfolio 🚀
 
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Node.js](https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=Vite&logoColor=yellow)
-![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![Sass](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)
-![ESLint](https://img.shields.io/badge/ESLint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)
+![npm](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 
 ## What is this?
 
 my portfolio is designed to showcase my career history, skill sets, and more.
 
-View the [Demo](https://pratiksinghlad.github.io/my-portfolio/).
+View the [site](https://pratiksinghlad.github.io/).
 
 **This portfolio code is free to use, and no attribution is required.** You can fork or download this repository to customize it for your own use. Please don't forget to leave a ⭐ if you like this portfolio!
 
@@ -19,15 +18,12 @@ View the [Demo](https://pratiksinghlad.github.io/my-portfolio/).
 ✅ Open source (free to use, no attribution required)  
 ✅ Built with Vite for lightning-fast development  
 ✅ Responsive design & mobile-friendly  
-✅ Modern development setup with ESLint and Prettier  
-✅ Supports both dark and light modes  
-✅ Highly customizable multi-component layout  
-✅ Built with modern technologies (React, TypeScript, SCSS)  
-✅ Automatic code formatting and linting on save
+✅ TypeScript checking and Prettier formatting  
+✅ Static site published to GitHub Pages
 
 ## Quick Setup
 
-1. Ensure you have [Node.js](https://nodejs.org/) installed (version 16 or higher). Check your installation by running:
+1. Ensure you have [Node.js](https://nodejs.org/) 22 or newer installed. Check your installation by running:
 
    ```bash
    node -v
@@ -49,43 +45,13 @@ View the [Demo](https://pratiksinghlad.github.io/my-portfolio/).
 
 5. Customize the template by navigating to the `/src/components` directory. Modify texts, pictures, and other information as needed.
 
-The page will automatically reload when you make changes. ESLint and Prettier will automatically format your code on save.
+The page will automatically reload when you make changes. Prettier formats the code on save.
 
 ## Deployment
 
-You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/), [Render](https://render.com/), [Heroku](https://www.heroku.com/)) for deployment. One of the easiest ways to host this portfolio is using GitHub Pages. Follow the instructions below for a production deploy.
+Pushes to `main` build the site and publish the `build` folder to the `gh-pages` branch. GitHub Pages serves that branch, and its CDN compresses the HTML, CSS, and JavaScript on the way to the browser.
 
-1. **Set Up GitHub Repository**
-
-   Create a new repository on GitHub for your portfolio app.
-
-2. **Configure `package.json`**
-
-   Edit the following properties in your `package.json` file: ```json
-   {
-   "homepage": "https://yourusername.github.io/your-repo-name",
-   "scripts": {
-   "start": "vite",
-   "build": "tsc && vite build",
-   "preview": "vite preview",
-   "predeploy": "npm run build",
-   "deploy": "gh-pages -d dist"
-   }
-   }
-
-   Replace `yourusername` with your GitHub username and `your-repo-name` with the name of your GitHub repository.
-
-3. **Deploy to GitHub Pages**
-
-   Run the following command to deploy your app:
-
-   ```bash
-   npm run deploy
-   ```
-
-4. **Access Your Deployed App**
-
-   After successfully deploying, you can access your app at `https://yourusername.github.io/your-repo-name`.
+Pull requests run the same lint and build without deploying.
 
 ## Continuous Integration/Continuous Deployment
 
@@ -95,33 +61,26 @@ This project uses GitHub Actions for CI/CD:
 
 1. **Build Verification**
 
-   - Runs on every push and pull request to main branch
-   - Builds the project using Node.js 18.x and 20.x
-   - Verifies build success
-   - Uploads build artifacts for deployment
+   - Runs on every push and pull request to the main branch
+   - Installs dependencies from the lockfile with Node.js 22
+   - Lints and builds the static site
+   - Uploads a compressed build artifact on pushes to main
 
-2. **Code Quality**
-   - ESLint checking on every push and pull request
-   - Ensures code style and quality standards
-   - Blocks merging if ESLint checks fail
+2. **Deploy**
+   - Publishes that artifact to the `gh-pages` branch as one orphan commit
+   - Skips Jekyll so GitHub Pages serves the files as a static site
 
 ### Status Badges
 
-![Build Status](https://github.com/pratiksinghlad/my-portfolio/actions/workflows/build.yml/badge.svg)
-![ESLint Status](https://github.com/pratiksinghlad/my-portfolio/actions/workflows/eslint.yml/badge.svg)
+![Build Status](https://github.com/pratiksinghlad/pratiksinghlad.github.io/actions/workflows/build.yml/badge.svg)
 
 ## Code Quality and Development Tools
 
-This project uses modern development tools to ensure code quality and developer productivity:
+### TypeScript and Prettier
 
-### ESLint and Prettier
-
-The project is configured with ESLint and Prettier for consistent code style and quality:
-
-- **ESLint**: Catches programming errors and enforces code style
-- **Prettier**: Automatically formats code on save
-- **VS Code Integration**: Works out of the box with VS Code
-- **Pre-configured Rules**: Optimized for React and TypeScript
+- **TypeScript**: The build fails when types, function length, or naming rules fail
+- **Prettier**: Formats code on save
+- **VS Code Integration**: Works with the settings in this repository
 
 ### Development Server
 
@@ -132,7 +91,6 @@ The project uses Vite as the development server, offering:
 The repository includes optimized VS Code settings for:
 
 - Automatic code formatting on save
-- ESLint error highlighting
 - TypeScript integration
 - Recommended extensions
 
