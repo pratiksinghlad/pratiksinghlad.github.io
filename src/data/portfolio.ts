@@ -105,6 +105,18 @@ export function contactHref(): string {
   return `mailto:${EMAIL}?subject=${subject}`;
 }
 
+type ImageFormat = "avif" | "webp" | "jpg";
+
+export function thumbSet(format: ImageFormat): string {
+  const largeStem = format === "jpg" ? LARGE_JPEG_STEM : LARGE_STEM;
+  return `${sizedFile(THUMB_STEM, format, THUMB_WIDTH)}, ${sizedFile(largeStem, format, LARGE_WIDTH)}`;
+}
+
+export function largeFile(format: ImageFormat): string {
+  const stem = format === "jpg" ? LARGE_JPEG_STEM : LARGE_STEM;
+  return asset(`images/${stem}.${format}`);
+}
+
 export function photoUrl(): string {
   return asset(PHOTO_PATH);
 }
